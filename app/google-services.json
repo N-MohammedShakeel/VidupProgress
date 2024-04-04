@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "184086136050",
+    "project_id": "vidupprogress",
+    "storage_bucket": "vidupprogress.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184086136050:android:117628feb88a67c5d43c6b",
+        "android_client_info": {
+          "package_name": "com.example.vidupprogress"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhuxUTwT5dW6lgMgKCATlRbRnxBYjiH40"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
