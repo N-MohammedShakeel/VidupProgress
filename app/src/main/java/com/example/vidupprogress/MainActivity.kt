@@ -1,6 +1,5 @@
 package com.example.vidupprogress
 
-import android.app.Activity
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
@@ -10,22 +9,17 @@ import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
-import android.widget.Button
+import android.view.View
 import android.widget.Toast
-import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.example.vidupprogress.databinding.ActivityMainBinding
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.core.View
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import kotlinx.coroutines.channels.Channel
-import java.util.jar.Manifest
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -81,7 +75,7 @@ class MainActivity : AppCompatActivity() {
     private fun uploadImage() {
 
         nprog()
-        binding.progressBar.visibility = android.view.View.VISIBLE
+        binding.progressBar.visibility = View.VISIBLE
         storageRef = storageRef.child(System.currentTimeMillis().toString())
         imageUri?.let {
             storageRef.putFile(it).addOnCompleteListener { task ->
@@ -110,14 +104,14 @@ class MainActivity : AppCompatActivity() {
                                     ).show()
 
                                 }
-                                binding.progressBar.visibility = android.view.View.GONE
+                                binding.progressBar.visibility = View.GONE
                                 binding.imageView.setImageResource(R.drawable.vector)
 
                             }
                     }
                 } else {
                     Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
-                    binding.progressBar.visibility = android.view.View.GONE
+                    binding.progressBar.visibility = View.GONE
                     binding.imageView.setImageResource(R.drawable.vector)
 
                 }
